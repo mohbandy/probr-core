@@ -24,17 +24,18 @@ worker:
 
 # database container
 postgres:
-   image: postgres:9.4.5
+   image: arm32v7/postgres
    environment:
      POSTGRES_USER: probr
      POSTGRES_PASSWORD: probr
 
 # redis container
 redis:
-   image: redis:2.8.19
+   image: arm32v7/redis
 
 # data container for probr
 dataprobr:
-  image: cogniteev/echo
+  image: arm32v7/hello-world
   volumes:
     - ./media:/code/media
+
